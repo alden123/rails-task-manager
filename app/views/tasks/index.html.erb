@@ -1,0 +1,22 @@
+<div class="text-center">
+<h1>This is my todo list</h1>
+</div>
+
+<div class="text-inline row col-xs-12 col-md-8 padded">
+<% @tasks.each do |task| %>
+
+ <h4><%= task.id %></h4>
+ <h4><%= task.name %></h4>
+  <%= link_to "Accéder à la tache", task_path(task)%>   <%= link_to "Updater la tache", edit_task_path(task) %>
+  <%= link_to "Détruire la tache", task_path(task), method: :delete %>
+
+<%end%>
+
+<br>
+<br>
+<p class="bnt btn-info"> <%=link_to "créer tache", new_task_path(@task)  %>
+</p>
+</div>
+
+
+
